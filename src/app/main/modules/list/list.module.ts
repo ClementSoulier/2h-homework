@@ -4,9 +4,10 @@ import { ListComponent } from './list.component';
 import { CoreModule } from 'twohours-core';
 import { UiModule } from 'twohours-ui';
 import { RouterModule } from '@angular/router';
+import { TicketComponent } from './components/ticket/ticket.component';
 
 @NgModule({
-  declarations: [ListComponent],
+  declarations: [ListComponent, TicketComponent],
   imports: [
     CommonModule,
     CoreModule,

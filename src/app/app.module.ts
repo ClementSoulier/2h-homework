@@ -6,6 +6,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { NgFluxifyModule } from 'ng-fluxify';
 import {HttpMockInterceptor} from "./http-mock-interceptor";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       enableStoreLogger: !environment.production,
       enableDynamicStateMutability: true,
     }),
+    BrowserAnimationsModule,
   ],
   providers: [
     {

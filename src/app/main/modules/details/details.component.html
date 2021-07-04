@@ -1,6 +1,10 @@
 <ng-container *ngIf="ticket">
-  <h1>Ticket n°{{ ticket.id }}</h1>
-  <p>State : {{ ticket.completed ? 'Done' : 'To Do' }}</p>
-  <p>Assignee : {{ (ticket.user$ | async).name }}</p>
-  <p>Description : {{ ticket.description }}</p>
+  <mat-card>
+    <mat-card-title><h1>Ticket n°{{ ticket.id }}</h1></mat-card-title>
+    <mat-card-content>
+      <p>State : {{ ticket.completed ? 'Done' : 'To Do' }}</p>
+      <p>Assignee : {{ (ticket.user$ | async).name }}</p>
+      <p>Description : {{ ticket.description }}</p>
+    </mat-card-content>
+  </mat-card>
 </ng-container>

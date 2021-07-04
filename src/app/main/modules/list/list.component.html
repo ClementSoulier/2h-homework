@@ -1,19 +1,18 @@
-<h1>TICKETS LIST</h1>
+<div class="title">
+  <h1>TICKETS LIST</h1>
+</div>
+<mat-divider></mat-divider>
 <div *ngIf="tickets$ | async" class="workflow">
   <div *ngIf="ticketsToDo$ | async as ticketsToDo" class="todo">
     <h2>TO DO</h2>
     <div *ngFor="let ticketToDo of ticketsToDo">
-      <p>ID : {{ ticketToDo.id }}</p>
-      <p>Description : {{ ticketToDo.description }}</p>
-      <p>User : {{ (ticketToDo.user$ | async)?.name }}</p>
+      <app-ticket [ticket]="ticketToDo"></app-ticket>
     </div>
   </div>
   <div *ngIf="ticketsDone$ | async as ticketsDone" class="done">
     <h2>DONE</h2>
     <div *ngFor="let ticketDone of ticketsDone">
-      <p>ID : {{ ticketDone.id }}</p>
-      <p>Description : {{ ticketDone.description }}</p>
-      <p>User : {{ (ticketDone.user$ | async)?.name }}</p>
+      <app-ticket [ticket]="ticketDone"></app-ticket>
     </div>
   </div>
 </div>

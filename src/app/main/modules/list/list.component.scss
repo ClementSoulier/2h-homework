@@ -1,0 +1,15 @@
+.title {
+  text-align: center;
+  margin: 1rem;
+}
+.workflow {
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: lightgray;
+  display: flex;
+  justify-content: space-around;
+  h2 {
+    font-size: 45px;
+  }
+}
