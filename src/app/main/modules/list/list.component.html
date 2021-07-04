@@ -1,1 +1,4 @@
 <p>list works!</p>
+<div class="workflow">
+  <div *ngFor="let ticket of tickets$ | async">ID : {{ ticket.id }}</div>
+</div>
