@@ -1,4 +1,7 @@
-import { AbstractRestEntity, Entity, EntityProperty, RestEntityDescriptor } from 'ng-fluxify';
+import {AbstractRestEntity, Entity, EntityProperty, ManyToOne, RestEntityDescriptor} from 'ng-fluxify';
+import {forwardRef} from "@angular/core";
+import {UserEntity} from "./user.entity";
+import {Observable} from "rxjs";
 
 @Entity(
   new RestEntityDescriptor({
@@ -8,14 +11,17 @@ import { AbstractRestEntity, Entity, EntityProperty, RestEntityDescriptor } from
 )
 export class TicketEntity extends AbstractRestEntity {
   @EntityProperty({ type: Number, primary: true })
-  public id: number | undefined;
+  public id: number;
 
   @EntityProperty({ type: Boolean })
-  public completed: boolean | undefined;
+  public completed: boolean;
 
   @EntityProperty({ type: Number })
-  public assigneeId: number | undefined;
+  public assigneeId: number;
+
+  @ManyToOne({ entity: forwardRef(() => UserEntity), foreignKey: 'assigneeId' })
+  public user$: Observable<UserEntity>;
 
   @EntityProperty({ type: String })
-  public description: string | undefined;
+  public description: string;
 }

@@ -1,6 +1,14 @@
-[{
-  "id": 1,
-  "completed": "false",
-  "assigneeId": 100,
-  "description": "Mettre en place les flux"
-}]
+[
+  {
+    "id": 1,
+    "completed": true,
+    "assigneeId": 100,
+    "description": "Mettre en place les flux"
+  },
+  {
+    "id": 2,
+    "completed": false,
+    "assigneeId": 101,
+    "description": "Faire une pass UI/UX"
+  }
+]

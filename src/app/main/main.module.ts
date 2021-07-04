@@ -20,7 +20,7 @@ import * as Components from './components';
           { path: '', redirectTo: 'list', pathMatch: 'full' },
           { path: 'list', loadChildren: () => import('./modules/list/list.module').then((m) => m.ListModule) },
           {
-            path: 'details',
+            path: 'details/:id',
             loadChildren: () => import('./modules/details/details.module').then((m) => m.DetailsModule),
           },
         ],
