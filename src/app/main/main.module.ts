@@ -5,6 +5,7 @@ import { UiModule } from 'twohours-ui';
 import { MainComponent } from './main.component';
 import { RouterModule } from '@angular/router';
 import * as Components from './components';
+import * as Guards from './guards';
 
 @NgModule({
   declarations: [MainComponent, Components.HeaderComponent],
@@ -22,10 +23,12 @@ import * as Components from './components';
           {
             path: 'details/:id',
             loadChildren: () => import('./modules/details/details.module').then((m) => m.DetailsModule),
+            canActivate: [Guards.TicketIdGuard],
           },
         ],
       },
     ]),
   ],
+  providers: [Guards.TicketIdGuard],
 })
 export class MainModule {}

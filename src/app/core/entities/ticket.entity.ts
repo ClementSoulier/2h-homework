@@ -1,7 +1,7 @@
-import {AbstractRestEntity, Entity, EntityProperty, ManyToOne, RestEntityDescriptor} from 'ng-fluxify';
-import {forwardRef} from "@angular/core";
-import {UserEntity} from "./user.entity";
-import {Observable} from "rxjs";
+import { AbstractRestEntity, Entity, EntityProperty, ManyToOne, RestEntityDescriptor } from 'ng-fluxify';
+import { forwardRef } from '@angular/core';
+import { UserEntity } from './user.entity';
+import { Observable } from 'rxjs';
 
 @Entity(
   new RestEntityDescriptor({

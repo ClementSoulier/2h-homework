@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TicketEntity } from '../../../core/entities';
-import {map} from "rxjs/operators";
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-list',
@@ -15,9 +15,7 @@ export class ListComponent implements OnInit {
 
   ngOnInit(): void {
     this.tickets$ = TicketEntity.readAll<TicketEntity>();
-    this.ticketsToDo$ = this.tickets$
-      .pipe(map(tickets => tickets.filter((ticket: TicketEntity) => !ticket.completed)));
-    this.ticketsDone$ = this.tickets$
-      .pipe(map(tickets => tickets.filter((ticket: TicketEntity) => ticket.completed)));
+    this.ticketsToDo$ = this.tickets$.pipe(map((tickets) => tickets.filter((ticket: TicketEntity) => !ticket.completed)));
+    this.ticketsDone$ = this.tickets$.pipe(map((tickets) => tickets.filter((ticket: TicketEntity) => ticket.completed)));
   }
 }
